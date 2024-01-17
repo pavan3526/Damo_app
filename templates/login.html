@@ -1,0 +1,81 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title></title>
+	<!-- <link rel="stylesheet" href="css/style.css"> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+      .msg{
+        text-align: center;
+        position: relative;
+        bottom: 15px;
+      }
+    /*  .logo{
+        width : 200px;
+        height : 60px;
+    }*/
+  </style>
+</head>
+<body>
+    <div class="login-page">
+  <div class="form">
+    <!-- <form class="register-form">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder = 'Username' name = "reg_usr" id="reg_usr">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder = 'Password' name = "reg_pwd" id="reg_pwd">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" placeholder = 'Email' name = "reg_email" id="reg_email">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder = 'Phone Number' name = "reg_phoneno" id="reg_phoneno">
+        </div>
+        <button type="button" id='Regbutton'class="btn btn-primary">Register</button>
+        <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form> -->
+    <!-- <form class="login-form" method="POST" action="enter.php"> -->
+    <form class = 'login-form' action="/login" method="POST">
+        <div class="logo">
+            <img src="{{url_for('static', filename='logo.png')}}" class='image' align="middle">
+        </div>
+        <div class="msg">{{ msg }}</div>
+        <div class="form-group Username">
+            <input type="text" class="form-control" placeholder = 'Username' name ='uname' id="log_usr">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder = 'Password' name='pwd' id="log_pwd">
+        </div>
+        <div class="forgot">
+            <a href="change.html"> Forgot Password? </a>
+        </div>
+        <button type="submit"  name="submit" class="btn btn-primary btn1">Login</button>
+        <p class="copy_rights">2021 Damo Consulting Inc. All Rights Reserved</p>
+    </form>
+  </div>
+</div>
+<!-- <script type="text/javascript">
+    $('.message a').click(function(){
+        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    });
+    $('#Regbutton').click(function(){
+        var form = $('.register-form').serialize();
+          console.log('Clicked');
+            $.ajax({
+                url: 'register.php',
+                type: 'post',
+                //data: 'hello',
+                data: form,
+                success: function(data){
+                    console.log(data);
+                }
+            })
+    })
+</script> -->
+</body>
+</html>
